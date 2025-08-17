@@ -378,6 +378,10 @@ nav {
 }
 
 /* ===== Modern Centered Contact Section ===== */
+.contactme{
+    text-align: center;
+}
+
 .contact-container {
     display: flex;
     justify-content: center;
@@ -607,6 +611,7 @@ footer {
     }
 
 }
+
 
 
 
