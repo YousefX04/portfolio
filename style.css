@@ -558,6 +558,19 @@ footer {
     .hamburger.active .line:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+    
+    .contact-item {
+        font-size: 1rem;
+    }
+    
+    .qr-code {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -575,4 +588,5 @@ footer {
     }
 
 }
+
 
