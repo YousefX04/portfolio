@@ -110,6 +110,7 @@ nav {
 
 .logo {
     font-size: 1.5rem;
+    margin-left: 12px;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -529,6 +530,7 @@ footer {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        margin-right: 10px;
     }
     
     .nav-links {
@@ -611,6 +613,7 @@ footer {
     }
 
 }
+
 
 
 
