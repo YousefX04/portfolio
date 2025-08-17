@@ -72,16 +72,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Form submission handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here you would typically send the form data to a server
-            // For this example, we'll just show an alert
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-    }
+    // Enhanced Form Handling with Validation
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.querySelector('.contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const formData = new FormData(this);
+                const name = formData.get('name') || this.querySelector('[name="name"]').value;
+                const email = formData.get('email') || this.querySelector('[type="email"]').value;
+                const message = formData.get('message') || this.querySelector('textarea').value;
+                
+                // Validate required fields
+                if (!name.trim() || !email.trim() || !message.trim()) {
+                    alert('❗ Please fill in all required fields');
+                    return;
+                }
+                
+                // Validate email format
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert('📧 Please enter a valid email address');
+                    return;
+                }
+                
+                // Success message with collected data
+                alert(`✅ Thank you ${name}!\n\nWe've received your message:\n"${message.slice(0, 50)}${message.length > 50 ? '...' : ''}"\n\nWe'll contact you at ${email} soon.`);
+                
+                // Reset form
+                this.reset();
+            });
+        }
+    });
+
 });
